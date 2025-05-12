@@ -1,0 +1,19 @@
+# Import necessary libraries
+import joblib
+import pandas as pd
+
+# Step 1: Load the model (make sure the model file 'model.pkl' is in the same folder as this script)
+model = joblib.load('model.pkl')  # Replace with the actual path if the model is in a different folder
+
+# Step 2: Load the input data (e.g., your training dataset or new data for prediction)
+input_data = pd.read_csv('customer_churn_dataset-training-master.csv')  # Using your provided file name
+
+# Optional Step 3: Preprocess the data (if needed)
+# Sometimes, the model needs the data to be cleaned or formatted. For example:
+# input_data = preprocess_data(input_data)  # If you need any preprocessing, add it here.
+
+# Step 4: Make predictions with the model
+predictions = model.predict(input_data)  # Use the model to predict outcomes based on the input data
+
+# Step 5: Display the prediction results
+print("Prediction results:", predictions)
